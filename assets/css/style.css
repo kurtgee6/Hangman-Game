@@ -1,0 +1,64 @@
+body {
+	background: url("/Users/kurtgriarte/codecampdemo/Hangman-Game/assets/images/background_image.jpg");
+}
+
+h1 {
+	text-align: center;
+	border: 5px solid darkslategray;
+	padding: 20px;
+	font-size: 68px;
+	background-color: white;
+	color: darkslategray;
+	text-shadow: 0px 6px 1px darkgoldenrod, 0 1px darkgoldenrod, 1px 0 darkgoldenrod, 0 -1px darkgoldenrod;
+
+}
+
+.mainSection {
+	border: 2px solid white;
+	padding: 10px;
+	font-size: 38px;
+	background-color: darkslategray;
+	color: white;
+	text-align: center;
+	text-shadow: -7px 8px 1px black, 0 1px black, 1px 0 black, 0 -1px black;
+
+
+}
+ .sideBar {
+ 	font-size: 32px;
+ 	background-color: darkslategray;
+ 	color: white;
+ 	border: 2px solid white;
+ 	padding: 15px;
+ 	text-align: center;
+ 	text-shadow: -4px 7px 1px black, 0 1px black, 1px 0 black, 0 -1px black;
+
+ }
+
+h1, p {
+	font-family: 'Permanent Marker', cursive;
+
+}
+
+#images {
+	width: 250px;
+	height: 300px;
+}
+
+.navbar-fixed-bottom {
+    bottom: 0;
+    margin-bottom: 0;
+    border: 3px solid darkslategray;
+    margin-left: 160px;
+    margin-right: 160px;
+    background: white;
+}
+
+.footer {
+    text-align: center;
+    font-size: 18px;
+    padding: 3px;
+    color: darkslategrey;
+}
+
+
