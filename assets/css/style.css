@@ -1,5 +1,6 @@
 body {
-	background: url("/Users/kurtgriarte/codecampdemo/Hangman-Game/assets/images/background_image.jpg");
+	background: url("../images/background_image.jpg");
+	height: 700px;
 }
 
 h1 {
