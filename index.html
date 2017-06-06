@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-			<title>Avatar The Last Airbender: Hangman</title>
+			<title>Guess Character Avatar The Last Airbender</title>
 								<!--Bootstrap source -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 									 <!-- Custom CSS Source -->
 					<link rel="stylesheet" href="assets/css/style.css">
 								<!-- 	custom h1 font -->
 					<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-								<!-- Javascript source-->
-		<script type="text/javascript" src= "assets/javascript/game.js" ></script>
 
 	</head>
 <body>
@@ -29,9 +27,9 @@
 		<div class="secondRow">
 			<div class="col-md-6">
 				<div class="mainSection">
-					<p>Guess Word :</p>
-					<p>Character : </p>
-					<img id="images" src="assets/images/aang.jpg"> 
+					<p>Guess Character : </p>
+					<p id="wordSection" type="text" onkeyup="myScript">  _ _ _ _ _  </p>
+					<img id="images" src="assets/images/Jet.png"> 
 				</div>
 			</div>		
 		</div>
@@ -53,6 +51,8 @@
 				</div>
 			</div>
 		</div>
+								<!-- Javascript source-->
+		<script type="text/javascript" src= "assets/javascript/game.js" ></script>
 
 	</div>
 </body>
