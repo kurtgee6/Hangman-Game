@@ -14,6 +14,10 @@ h1 {
 
 }
 
+#wordSection {
+	color: black;
+}
+
 .mainSection {
 	border: 2px solid white;
 	padding: 10px;
@@ -42,6 +46,8 @@ h1, p {
 }
 
 #images {
+	margin-top: 10px;
+	border: 2px solid white;
 	width: 250px;
 	height: 300px;
 }

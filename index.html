@@ -12,9 +12,9 @@
 	</head>
 <body>
 							<!-- 	Audio For Hangman  -->
-<!-- 				<audio autoplay="assets/music/music.mp3" src="assets/music/music.mp3" loop="assets/music/music.mp3"></audio>
- -->		
-									<!-- container -->
+				<audio autoplay="assets/music/music.mp3" src="assets/music/music.mp3" loop="assets/music/music.mp3"></audio>
+		
+									<!-- container for row, main section, side bar, and footer -->
 
 	<div class = "container">
 									<!-- First row -->
@@ -28,8 +28,8 @@
 			<div class="col-md-6">
 				<div class="mainSection">
 					<p>Guess Character : </p>
-					<p id="wordSection" type="text" onkeyup="myScript">  _ _ _ _ _  </p>
-					<img id="images" src="assets/images/Jet.png"> 
+					<input id="wordSection" type="text" autofocus />
+					<img id="images"/> 
 				</div>
 			</div>		
 		</div>
@@ -37,9 +37,8 @@
 		<div class="thirdRow">
 			<div class="col-md-6">
 				<div class="sideBar">
-					<p class="wins">Wins : </p>
-					<p class="numbersGuess">Numbers of Guesses Left : </p>
-					<p class="lettersGuess">Letters Guessed : </p>
+					<p id="guessLeft">Numbers of Guesses Left : </p>
+					<p id="lettersGuess">Letters Guessed : 0</p>
 				</div>
 			</div>
 		</div>

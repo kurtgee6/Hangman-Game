@@ -1,6 +1,12 @@
-var guessDisplay = []; // Holds the characters the user inputs. 
-var lettersGuessed = 0;
-var guessLeft = 0; // Setting it at 10 to show on the page once the game has started
+
+var wins = 0; /var wins = 0; //This variable tracks the wins
+var currentWord; // This is the word selected by the computer during the selectWord function.
+var guessDisplay = []; // Holds the chars the user inputs. I put an empty string in here so I wouldn’t need a <= in a later for loop
+var selectedWord = []; //Array of chars from the currentWord variable.
+var guessesLeft = 10; // Setting it at 10 to show on the page once the game has started
+var guess = ‘’; 
+var correctCount = 0; 
+var pickedWord = 0; 
 var characters = [["Avatar Aang", "assets/images/aang.jpg"],
                   ["Sokka", "assets/images/sokka.jpg"],
                   ["Firelord Ozai", "assets/images/FireLord-Ozai.jpg"],
@@ -51,100 +57,52 @@ var characters = [["Avatar Aang", "assets/images/aang.jpg"],
                   ["Foggy Swamp", "assets/images/Foggy-swamp.jpg "],
                   ["Ember Island", "assets/images/Ember_Island.png"],
                   ["Kyoshi Island", "assets/images/Kyoshi_Island.png"],
-                  ["Boiling Rock", "assets/images/Boiling_Rock.png"]];  //function to randomize the displayed image and character on website // Tracks characters names with their respected images 
-var globalWord;
-var globalImage;
-var wordSection = "";
-var isGameOver = false;
+                  ["Boiling Rock", "assets/images/Boiling_Rock.png"]];
 
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+                      //function to randomize the displayed image and character on website // Tracks characters names with their respected images 
+
+
+function start() { //Tracks the start of the game when the button is clicked 
+    document.getElementById(“buttonSpacer”).style.display = “none”; //Removes the button
+    document.getElementById(“container”).style.display = “block”; //Shows the game
+    makeTiles();
+    scoreCard();
+    initial();
 }
 
-function randomize (){
-  var ran = characters[getRandomIntInclusive(0, characters.length - 1)];
-  globalWord = ran[0]; 
-  globalImage = ran[1];
+function win () {
 
-  guessLeft = globalWord.length;
-  document.getElementById("guessLeft").innerHTML = "Numbers of Guesses Left : " + guessLeft;
 
-  return [globalWord, globalImage];
-  
 }
+//If user inputs the right letters to match the word
+//users gets 1 point added to their wins 
 
-function outputImage () {
-  document.getElementById("images").src = randomize ()[1];
-}
+var random = function () {
 
-outputImage();
+  var ran = characters[Math.floor((Math.random() * characters.length) + 1)];
+  globalWord = ran[0]; // name
+  globalImage = ran[1]; // images
+  console.log(globalWord, globalImage);
 
-document.getElementById("wordSection").onkeyup = function(event) {
-  if (isGameOver) {
-    return;
+  // Grabing the images from the DOM
+  // and set it's attribute
+
+  var img = document.getElementById("images");
+      img.setAttribute('src', globalImage); // setting the attribute
+  console.log(img);
+
+  for (i = 0; i <= globalWord.length; i++ ) {
+
+      console.log(guessDisplay.push(globalWord));
+
   }
-  if (event.which === 8 ){ // Backspace
-    event.preventDefault();
-    if (wordSection !== "") {
-      guessLeft++;
-      wordSection = document.getElementById("wordSection").value;
-      document.getElementById("guessLeft").innerHTML = "Numbers of Guesses Left : " + guessLeft;
-    }
-    return;
 
-  } else if (event.which === 13) { // Enter
-    checkWord();
-    newRound ();
-    return;
-  } 
-
-  wordSection = document.getElementById("wordSection").value;
-  lettersGuessed++;
-  guessLeft--;
-
-  document.getElementById("wordSection").value = wordSection;
-  document.getElementById("lettersGuess").innerHTML = "Letters Guessed : " + lettersGuessed;
-  document.getElementById('guessLeft').innerHTML = "Numbers of Guesses Left : " + guessLeft;
-
-  checkWord ();
-
-};
-
-function gameOver () {
-  document.getElementById("wordSection").value = "Game Over";
-  document.getElementById("wordSection").readOnly = "readOnly";
-  setTimeout(function() {
-    newRound();
-  }, 3000 );
 }
 
-function newRound () {
-  outputImage();
-  lettersGuessed = 0;
-  wordSection = "";
-  isGameOver = false;
-  document.getElementById("wordSection").value = wordSection;
-  document.getElementById("guessLeft").innerHTML = "Numbers of Guesses Left : " + guessLeft;
-  document.getElementById("lettersGuess").innerHTML = "Letters Guessed : " + lettersGuessed;
-  document.getElementById("wordSection").readOnly = false;
-}
+random(); // invoking the function when the page loads
 
-function checkWord () {
-  if (wordSection.toLowerCase() === globalWord.toLowerCase()) {
-    document.getElementById("wordSection").value = "Good Job";
-    setTimeout(function() {
-      newRound();
-    }, 3000);
-    return;
-  } 
 
-  if (guessLeft === 0){
-    isGameOver = true;
-    gameOver();
-  }
-}
+
 
 
 
